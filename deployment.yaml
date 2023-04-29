@@ -15,7 +15,7 @@ spec:
 
   selector:
     app: api-service
-  type: NodePort
+  type: LoadBalancer
 
 ---
 
