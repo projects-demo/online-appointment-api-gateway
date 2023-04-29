@@ -4,16 +4,16 @@ steps:
     entrypoint: 'mvn'
     args: ['clean', 'install', '-DskipTests']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/online-appointment-api-gateway:latest', '.']
+    args: ['build', '-t', 'gcr.io/app-mod-gebu-trainees/online-appointment-api-gateway:latest', '.']
   # push container image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/online-appointment-api-gateway:latest']
+    args: ['push', 'gcr.io/app-mod-gebu-trainees/online-appointment-api-gateway:latest']
   # Deploy on GKE
   - name: "gcr.io/cloud-builders/gke-deploy"
     args:
     - run
     - --filename=deployment.yaml
-    - --image=gcr.io/online-appointment-api-gateway:latest
+    - --image=gcr.io/app-mod-gebu-trainees/online-appointment-api-gateway:latest
     - --location=us-central1-c
     - --cluster=cluster-1
 options:
