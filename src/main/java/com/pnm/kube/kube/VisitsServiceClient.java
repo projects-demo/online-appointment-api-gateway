@@ -10,7 +10,6 @@ import java.util.List;
 
 import static java.util.stream.Collectors.joining;
 
-
 @Component
 @RequiredArgsConstructor
 public class VisitsServiceClient {
